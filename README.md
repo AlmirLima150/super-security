@@ -49,4 +49,3 @@ mas vem desligado porque o e-mail é fictício. Para ligar:
 3. Envie o formulário uma vez e confirme o e-mail de ativação que o FormSubmit mandar.
 
 > Telefones, e-mail e alvará são dados fictícios (placeholders) — substitua pelos oficiais.
-> O ícone do WhatsApp é genérico; na versão final use o ícone oficial do brand kit do WhatsApp.
