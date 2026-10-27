@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<!--
+  ============================================================================
+  Super Security — Landing Page
+  Arquivo: index.html
+  Projeto Integrador · Grupo 09
+
+  Página única (one-page). Cada seção tem um id usado pelos links do menu.
+  Documentação completa: docs/04-html.md
+
+  ÍNDICE DE SEÇÕES                     id / classe principal
+    00 Barra institucional ........... .utility-bar
+    01 Header / navegação ............ #topo · .site-header
+       Menu mobile (painel) .......... #mobile-menu
+    02 Hero + radar + indicadores .... #inicio · .hero
+    03 Sobre Nós ..................... #sobre
+    04 Serviços ...................... #servicos
+    05 Diferenciais .................. #diferenciais
+    06 Orçamento (mapa + formulário) . #contato · #form-orcamento
+    07 Footer ........................ .site-footer
+    08 FAB WhatsApp .................. .fab
+    09 Barra de ação fixa (celular) .. .sticky-cta
+
+  Dependências: css/styles.css · js/main.js · Google Fonts (Inter,
+  Newsreader, JetBrains Mono) · imagens em assets/
+  ============================================================================
+-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +34,7 @@
   <meta name="theme-color" content="#0A1128">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
-  <!-- Fontes do design system (Figma): Newsreader (títulos), Inter (texto/UI), JetBrains Mono (rótulos) -->
+  <!-- Fontes do design system: Newsreader (títulos), Inter (texto/interface), JetBrains Mono (rótulos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
@@ -56,7 +82,7 @@
     </div>
   </header>
 
-  <!-- Menu mobile (frame "Mobile — Menu aberto") -->
+  <!-- 01b · Menu mobile (painel em tela cheia, aberto pelo botão .menu-toggle — ver js/main.js §2) -->
   <div class="mobile-menu" id="mobile-menu" hidden>
     <div class="mobile-menu__header">
       <a class="logo" href="#inicio" aria-label="Super Security — página inicial">
@@ -103,7 +129,8 @@
             </div>
           </div>
 
-          <!-- Radar de cobertura: mesmo mapa-base do formulário (Map/Recife RMR) -->
+          <!-- Radar de cobertura: usa o mesmo mapa-base do formulário (assets/img/mapa-recife-rmr.svg).
+               Cálculo das posições dos pinos: docs/07-mapa-e-radar.md -->
           <figure class="radar-wrap">
             <div class="radar" role="img" aria-label="Radar de cobertura com raio de 15 km a partir da base central no Recife, mostrando as unidades táticas de Olinda, Casa Forte, Boa Viagem e Jaboatão.">
               <div class="radar__mask">
@@ -255,7 +282,7 @@
       </div>
     </section>
 
-    <!-- 06 · Captação / Formulário de Orçamento -->
+    <!-- 06 · Captação / Formulário de Orçamento (validação e envio em js/main.js §4) -->
     <section class="quote" id="contato" aria-labelledby="quote-title">
       <div class="quote__left">
         <div class="quote__inner">

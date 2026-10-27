@@ -28,11 +28,32 @@ super-security/
 ├── index.html          → estrutura das 8 seções (HTML semântico)
 ├── css/styles.css      → design tokens + layout responsivo (desktop 1440 · tablet · mobile 390)
 ├── js/main.js          → menu mobile, link ativo, máscara de telefone, validação e envio do formulário
+├── docs/               → documentação técnica
 └── assets/
     ├── img/            → símbolo da marca, favicon e mapa-base da RMR
     ├── icons/          → ícones de linha (24px)
     └── radar/          → camadas do radar de cobertura
 ```
+
+## Documentação
+
+A documentação técnica completa está em [`docs/`](docs/README.md):
+
+| # | Documento | Conteúdo |
+|---|-----------|----------|
+| 01 | [Visão geral](docs/01-visao-geral.md) | Objetivo, escopo, equipe e requisitos |
+| 02 | [Arquitetura](docs/02-arquitetura.md) | Estrutura, tecnologias e decisões técnicas |
+| 03 | [Design system](docs/03-design-system.md) | Cores, tipografia, grid e componentes |
+| 04 | [HTML](docs/04-html.md) | Seções, ids e acessibilidade da marcação |
+| 05 | [CSS](docs/05-css.md) | Organização, breakpoints e catálogo de classes |
+| 06 | [JavaScript](docs/06-javascript.md) | Referência das funções e fluxo do formulário |
+| 07 | [Mapa e radar](docs/07-mapa-e-radar.md) | Projeção geográfica e posição dos pinos |
+| 08 | [Acessibilidade](docs/08-acessibilidade.md) | Critérios WCAG 2.1 AA e contraste |
+| 09 | [Guia de manutenção](docs/09-guia-de-manutencao.md) | Como alterar contatos, serviços, cores e publicar |
+| 10 | [Testes](docs/10-testes.md) | Plano de testes e casos de teste |
+
+Cada arquivo de código (`index.html`, `css/styles.css`, `js/main.js`) começa com um
+índice em comentário, com a mesma numeração usada na documentação.
 
 ## Figma
 

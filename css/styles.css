@@ -1,3 +1,43 @@
+/* ============================================================================
+   Super Security — Landing Page
+   Arquivo: css/styles.css
+   Projeto Integrador · Grupo 09
+
+   Folha de estilo única do site. Convenções:
+   - Cores, fontes e medidas vêm de variáveis CSS (seção 1), espelhando as
+     variáveis e estilos de texto do design system no Figma.
+   - Classes no padrão BEM simplificado: .bloco, .bloco__elemento, .bloco--variante
+   - Desktop primeiro; ajustes para telas menores ficam na seção 6.
+
+   Documentação completa: docs/05-css.md · docs/03-design-system.md
+
+   ÍNDICE
+     1. Design tokens ............. cores, fontes e medidas (:root)
+     2. Base ...................... reset, elementos HTML, foco, skip-link
+     3. Estilos de texto .......... .h1 .h2 .h3 .title-serif .eyebrow .mono
+     4. Componentes ............... .btn (botões) · .logo
+     5. Seções
+        5.0 Barra institucional ... .utility-bar
+        5.1 Header ................ .site-header .main-nav .menu-toggle
+        5.2 Menu mobile ........... .mobile-menu
+        5.3 Hero .................. .hero .stats
+        5.4 Radar e mapa .......... .radar .map .pin .ring .km .map-legend
+        5.5 Layout de seção ....... .section .split .columns-3
+        5.6 Sobre Nós ............. .pillar
+        5.7 Serviços .............. .services .service
+        5.8 Diferenciais .......... .highlight
+        5.9 Orçamento ............. .quote .map-wrap .phones .form .field
+        5.10 Footer ............... .site-footer .footer__*
+        5.11 FAB WhatsApp ......... .fab
+        5.12 Barra fixa mobile .... .sticky-cta
+     6. Responsivo
+        6.1 ≤ 1280px .............. notebook
+        6.2 ≤ 1024px .............. tablet (menu hambúrguer)
+        6.3 ≤ 767px ............... celular (layout do frame mobile de 390px)
+        6.4 prefers-reduced-motion  sem animações
+   ============================================================================ */
+
+/* ---------- 1. Design tokens (variáveis do Figma: "Super Security Tokens") */
 :root {
   /* Cores */
   --primary-navy-dark: #0a1128;
@@ -132,12 +172,12 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- 5. Seções */
 
-/* 00 · Barra institucional */
+/* ---------- 5.0 Barra institucional */
 .utility-bar { background: var(--primary-navy-dark); color: var(--support-text-on-dark); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 .utility-bar__inner { height: 40px; display: flex; align-items: center; justify-content: space-between; white-space: nowrap; }
 .utility-bar a:hover { color: var(--neutral-text-light); }
 
-/* 01 · Header */
+/* ---------- 5.1 Header */
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: var(--primary-navy-dark);
@@ -161,7 +201,7 @@ button { font: inherit; cursor: pointer; }
 .menu-toggle span { display: block; width: 22px; height: 1.5px; background: var(--neutral-text-light); }
 .menu-toggle span:last-child { width: 14px; background: var(--accent-gold-shield); }
 
-/* Menu mobile aberto */
+/* ---------- 5.2 Menu mobile aberto (painel em tela cheia) */
 .mobile-menu {
   position: fixed; inset: 0; z-index: 90;
   display: flex; flex-direction: column;
@@ -187,7 +227,7 @@ button { font: inherit; cursor: pointer; }
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 02 · Hero */
+/* ---------- 5.3 Hero */
 .hero { background: var(--primary-navy-dark); padding-top: 104px; overflow: hidden; }
 .hero__row { display: flex; align-items: center; gap: var(--gutter); }
 .hero__content { flex: 0 0 714px; max-width: 714px; display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
@@ -209,7 +249,8 @@ button { font: inherit; cursor: pointer; }
 .stat--seal { gap: 12px; padding-top: 4px; }
 .stat--seal img { width: 28px; height: 28px; }
 
-/* Radar de cobertura (480×480; máscara circular 420 = raio 15 km) */
+/* ---------- 5.4 Radar de cobertura (480×480; máscara circular 420 = raio 15 km)
+   Posições dos pinos em % — ver docs/07-mapa-e-radar.md */
 .radar-wrap { flex: 1; display: flex; flex-direction: column; align-items: flex-end; }
 .radar { position: relative; width: 100%; max-width: 480px; aspect-ratio: 1; }
 .radar__mask {
@@ -236,7 +277,7 @@ button { font: inherit; cursor: pointer; }
 .radar__cardinal--o { left: 2px; top: 50%; transform: translateY(-50%); }
 .radar__km15 { left: 82.4%; top: 82.4%; opacity: .9; }
 
-/* Elementos compartilhados entre radar e mapa (mesmo componente Map/Recife RMR) */
+/* Elementos compartilhados entre o radar e o mapa do formulário */
 .map-base { position: absolute; max-width: none; }
 .ring {
   position: absolute; border-radius: 50%;
@@ -275,7 +316,7 @@ button { font: inherit; cursor: pointer; }
 .legend-mark { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-gold-shield); flex: none; }
 .legend-mark--base { width: 8px; height: 8px; border-radius: 0; }
 
-/* Seções padrão */
+/* ---------- 5.5 Layout de seção (fundos, colunas título/texto, grid de 3) */
 .section { padding-block: var(--section-y); }
 .section--light { background: var(--neutral-background); }
 .section--white { background: var(--support-surface-white); }
@@ -290,11 +331,11 @@ button { font: inherit; cursor: pointer; }
 
 .columns-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); }
 
-/* 03 · Pilares */
+/* ---------- 5.6 Sobre Nós · pilares */
 .pillar { display: flex; flex-direction: column; gap: 14px; padding: 24px 24px 0 0; border-top: 1px solid var(--neutral-text-primary); }
 .pillar p { color: var(--support-text-secondary); }
 
-/* 04 · Lista de serviços */
+/* ---------- 5.7 Serviços · lista numerada */
 .services { border-top: 1px solid var(--neutral-text-primary); }
 .service {
   display: flex; align-items: flex-start; gap: var(--gutter);
@@ -313,10 +354,10 @@ button { font: inherit; cursor: pointer; }
 .service__arrow { flex: 0 0 78px; display: flex; justify-content: flex-end; }
 .service__arrow img { width: 22px; height: 22px; transition: transform .2s; }
 
-/* 05 · Diferenciais */
+/* ---------- 5.8 Diferenciais */
 .highlight { display: flex; flex-direction: column; gap: 16px; padding: 28px 32px 0 0; border-top: 1px solid var(--accent-gold-shield); }
 
-/* 06 · Orçamento (split screen) */
+/* ---------- 5.9 Orçamento (tela dividida: proposta à esquerda, formulário à direita) */
 .quote { display: flex; min-height: 650px; }
 .quote__left { flex: 1; background: var(--primary-navy-dark); padding: 128px 64px 128px 0; display: flex; justify-content: flex-end; }
 .quote__left { justify-content: flex-start; }
@@ -370,7 +411,7 @@ button { font: inherit; cursor: pointer; }
 .form__status:empty { display: none; }
 .form__status { font-size: 14px; font-weight: 500; color: #146c2e; background: #e8f8ee; padding: 12px 16px; border-radius: var(--radius); }
 
-/* 07 · Footer */
+/* ---------- 5.10 Footer */
 .site-footer { background: var(--primary-navy-dark); padding-top: 96px; color: var(--support-text-on-dark); }
 .footer__cols { display: flex; gap: var(--gutter); }
 .footer__brand { flex: 0 0 var(--col-5); display: flex; flex-direction: column; gap: 24px; }
@@ -383,7 +424,7 @@ button { font: inherit; cursor: pointer; }
 .footer__bar { margin-top: 64px; padding: 28px 0; display: flex; gap: var(--gutter); align-items: flex-start; border-top: 1px solid var(--hairline-dark); }
 .footer__bar .caption { flex: 1; }
 
-/* 08 · FAB WhatsApp (fixo: right 32 / bottom 32) */
+/* ---------- 5.11 FAB WhatsApp (fixo: right 32 / bottom 32) */
 .fab {
   position: fixed; right: 32px; bottom: 32px; z-index: 60;
   width: 64px; height: 64px; border-radius: 50%;
@@ -394,14 +435,15 @@ button { font: inherit; cursor: pointer; }
 .fab:hover { transform: translateY(-2px) scale(1.04); }
 .fab img { width: 30px; height: 30px; }
 
-/* 09 · Barra de ação fixa (mobile) */
+/* ---------- 5.12 Barra de ação fixa (só aparece no celular — ver 6.3) */
 .sticky-cta { display: none; }
 
 /* =====================================================================
-   Responsivo
+   6. RESPONSIVO
+   Breakpoints: 1280 (notebook) · 1024 (tablet) · 767 (celular)
    ===================================================================== */
 
-/* Notebook / tablet largo */
+/* ---------- 6.1 Notebook / tablet largo (≤ 1280px) */
 @media (max-width: 1280px) {
   .container { padding-inline: 64px; }
   .hero__content { flex-basis: 56%; }
@@ -413,7 +455,7 @@ button { font: inherit; cursor: pointer; }
   .stat__value { font-size: 36px; }
 }
 
-/* Tablet */
+/* ---------- 6.2 Tablet (≤ 1024px): menu vira hambúrguer, colunas empilham */
 @media (max-width: 1024px) {
   .main-nav, .header-cta { display: none; }
   .menu-toggle { display: flex; }
@@ -437,7 +479,8 @@ button { font: inherit; cursor: pointer; }
   .footer__brand { flex-basis: 100%; }
 }
 
-/* Mobile — frame "Mobile — Landing Page (390)": margens 20px, grid 4 colunas */
+/* ---------- 6.3 Celular (≤ 767px) — frame "Mobile — Landing Page (390)":
+   margens 20px, grid de 4 colunas, estilos de texto "Mobile" do Figma */
 @media (max-width: 767px) {
   html { scroll-padding-top: 68px; }
   .container { padding-inline: 20px; }
@@ -521,6 +564,7 @@ button { font: inherit; cursor: pointer; }
   .fab img { width: 26px; height: 26px; }
 }
 
+/* ---------- 6.4 Usuários que preferem menos movimento: desliga animações */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .radar__sweep { animation: none; }
