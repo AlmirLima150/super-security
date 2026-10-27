@@ -1,4 +1,4 @@
-# Super Security — Landing Page
+# Super Security
 
 Projeto Integrador · Engenharia de Software — **Grupo 09** :
 
