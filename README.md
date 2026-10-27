@@ -2,12 +2,12 @@
 
 Projeto Integrador · Engenharia de Software — **Grupo 09** :
 
-Almir de Lima Felix dos Santos - 01878487 
-Breno Victor Florencio da Silva Marques - 01894104 
-Davi Lopes da Silva Marques - 01902324 
-Guilherme Anildo de Oliveira da Silva - 01878051
-Kauã Gabriel Ferreira Sobral - 01947077
-Saulo Guimarães de Souza Dantas - 01907485
+- Almir de Lima Felix dos Santos - 01878487 
+- Breno Victor Florencio da Silva Marques - 01894104 
+- Davi Lopes da Silva Marques - 01902324 
+- Guilherme Anildo de Oliveira da Silva - 01878051
+- Kauã Gabriel Ferreira Sobral - 01947077
+- Saulo Guimarães de Souza Dantas - 01907485
 
 Site institucional (one-page) da Super Security, empresa de segurança privada em Recife/PE.
 O código foi gerado a partir do **Dev Mode do Figma** : cores, fontes, espaçamentos e medidas vêm das variáveis e estilos de texto do design system.
