@@ -50,4 +50,4 @@ mas vem desligado porque o e-mail é fictício. Para ligar:
 2. Mude `ENVIAR_EMAIL` para `true`.
 3. Envie o formulário uma vez e confirme o e-mail de ativação que o FormSubmit mandar.
 
-> Telefones, e-mail e alvará são dados fictícios (placeholders) — substitua pelos oficiais.
+> Telefones, e-mail e alvará são dados fictícios (placeholders).
