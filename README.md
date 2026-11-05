@@ -12,6 +12,8 @@ Projeto Integrador · Engenharia de Software — **Grupo 09** :
 Site institucional (one-page) da Super Security, empresa de segurança privada em Recife/PE.
 O código foi gerado a partir do **Dev Mode do Figma** : cores, fontes, espaçamentos e medidas vêm das variáveis e estilos de texto do design system.
 
+Link para o site: https://supersecurity.alm.dev.br/
+
 ## Como abrir no VS Code
 
 1. No VS Code: **File → Open Folder…** e escolha a pasta `super-security`.
